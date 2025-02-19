@@ -499,7 +499,7 @@ let customNotificationPayload = {
     pivotId?: string; // optional - String value containing an A/B testing campaign's variant name.
  }
 
-clevertap.notificationCallback = function(msg){
+window.parent.clevertap.notificationCallback = function(msg){
       //raise the notification viewed and clicked events in the callback
       clevertap.renderNotificationViewed(customNotificationPayload);
        console.log("--------Inside callback");     
