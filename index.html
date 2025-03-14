@@ -495,8 +495,8 @@ document.addEventListener("CT_web_native_display", function(event) {
 });
 
 let customNotificationPayload = {
-    msgId: string; // required
-    pivotId?: string; // optional - String value containing an A/B testing campaign's variant name.
+    msgId: string // required
+    pivotId?: string // optional - String value containing an A/B testing campaign's variant name.
  }
 
 window.parent.clevertap.notificationCallback = function(msg){
