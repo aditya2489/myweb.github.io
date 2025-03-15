@@ -103,12 +103,9 @@
         <button onclick="enablePushNotifications()">Enable Notifications</button>
         
         <label for="event">Track Event:</label>
-        <input type="text" id="event" placeholder="Enter Event Name">
+        <input type="text" id="eventnm" placeholder="Enter Event Name">
         <button onclick="sendEvent()">Track Event</button>
         
-        <label for="product">Product Interaction:</label>
-        <input type="text" id="product" placeholder="Enter Product Name">
-        <button onclick="trackProductInteraction()">Track Product</button>
     </div>
 	</body>
 
@@ -143,11 +140,11 @@
 		let pushEvent = () => {
 			if (window.CleverTap) {
 				// Call Android interface             
-				CleverTap.pushEvent("EVENT from webview");
+				CleverTap.pushEvent(document.getElementById('eventnm').value);
 				testalert();
 			}
 			else {
-				clevertap.event.push("EVENT from website");
+				clevertap.event.push(document.getElementById('eventnm').value);
 				console.log("EVENT from website");
 				// clevertap.event.push("TestApiEvent");
 			}
@@ -162,21 +159,6 @@
 			else {
 				clevertap.event.push("fetchWebnative");
 				console.log("fetchWebnative");
-				// clevertap.event.push("TestApiEvent");
-			}
-		};
-
-		let pushEvent2 = () => {
-
-			if (window.CleverTap) {
-				// Call Android interface             
-
-				CleverTap.pushEvent("EVENT from webview 2");
-				testalert();
-			}
-			else {
-				clevertap.event.push("EVENT from website 2");
-				console.log("EVENT from website");
 				// clevertap.event.push("TestApiEvent");
 			}
 		};
