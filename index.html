@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -105,23 +106,6 @@
 
 	<script>
 
-	clevertap.fetchVariables(() => { console.log('Fetch successful'); },);
-		
-		if(window.Clevertap){
-		}
-		else{
-			const var1 = clevertap.defineVariable("webvariableoffer", "str")  
-			const var2 = clevertap.defineVariable("webvariablebanner", true)
-			clevertap.syncVariables(  
-  				// Success callback function  
-  				() => { console.log('Sync successful'); },
-
-  				// Failure callback function  
-  				() => { console.log('Sync failed'); }  
-			);
-			
-		}
-
 		let email_capture = () => {
 			if (window.CleverTap) {
 				// Call Android interface             
@@ -209,7 +193,7 @@
 			var ctid = clevertap.getCleverTapID();
 			document.getElementById("test").innerHTML = ctid;
 		};
-	//</script>
+	</script>
 	<br /><br />
 
 
@@ -364,7 +348,7 @@ document.addEventListener("CT_web_native_display", function(event) {
   }
 });
 
-let customNotificationPayload = {
+/*let customNotificationPayload = {
     msgId: string // required
     pivotId?: string // optional - String value containing an A/B testing campaign's variant name.
  }
@@ -378,7 +362,7 @@ window.parent.clevertap.notificationCallback = function(msg){
       $button.click(function(){
          clevertap.renderNotificationClicked(customNotificationPayload);
      });
-};		
+};		*/
 
 </script>
 
