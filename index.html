@@ -2,31 +2,56 @@
 <html lang="en">
 
 <head>
-	<style>
-		
-	  </style>
-	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-	<script>
-		//	clevertap.setMultiValuesForKey("Product_ids",[]); // Eg: setMultiValuesForKey('stuff', ['bag', 'shoes'])
-		function testalert() {
-			Swal.fire({
-				title: 'WEBVIEW',bod,
-				showClass: {
-					popup: 'animate__animated animate__fadeInDown'
-				},
-				hideClass: {
-					popup: 'animate__animated animate__fadeOutUp'
-				}
-			})
-		}
-	</script>
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Clevertap</title>
-	<!-- Notification Push javascript file -->
-	<!--<script src="/notificationPush.js"></script>-->
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CleverTap Integration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        input, select {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
 	<script type="text/javascript">
 		if (window.CleverTap) { }
 		else {
@@ -56,19 +81,8 @@
 
 	</script>
 	<script type="module">
-		// Import the functions you need from the SDKs you need
-		import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-
-
-// Initialize Firebase
-//const app = initializeApp(firebaseConfig);
-//const analytics = getAnalytics(app);
+	import { initializeApp } from "firebase/app";
+	import { getAnalytics } from "firebase/analytics";
 
 	</script>
 
@@ -76,101 +90,28 @@ import { getAnalytics } from "firebase/analytics";
 </head>
 
 <body bgcolor="#ffffff" class="">
-	<div>
-
-	<h1>Clevertap-1951 Test Website</h1>
-	<!-- onUserLogin -->
-
-	<!-- event -->
-
-	<div id="container">
-		<div class="close">&times;</div>
-	  <img src="https://img.freepik.com/free-photo/young-gowoman-yellow-leather-jacket-copy-space_23-2148674153.jpg?w=200"/>
-	  <div class="message">
-		  Hello <span id="user-name">user</span>,
-		   <p>Still thinking about the <span id="product-name">item</span> in your cart?</p>
-		<p>We get it - it's fabulous.</p>
-		   <p>Use SALE20 and avail 20% off</p>
-		<p>What are you waiting for??</p>
-	  </div>
-	</div>
-    <table >
-
-		<tr>
-            <td>
-		<input id="name" type="text" name="username" placeholder="Name" />
-    <br><br>
-			</td>
-		</tr>	
-				
-    <input id="emailid" type="text" name="username" placeholder="Email ID" />
-    <br><br>
-    <input id="identity" type="text" name="username" placeholder="Identity" />
-    <br><br>
-    <input id="mobno" type="text" name="username" placeholder="Mobile Number" />
-    <br><br>
-        <tr>
-            <td>
-                <button id="event" onclick="pushEvent()">Push Event</button> <br><br>
-            </td>
-            <td>
-                <button id="event" onclick="pushEvent2()">Push Event 2</button> <br><br>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <button id="login" onclick="loginAditya()">LOGIN for AW</button><br><br>
-            </td>
-            <td>
-                <button id="login" onclick="loginAditya2()">LOGIN for AW-iphone</button><br><br>
-            </td>
-        </tr>
+    <div class="container">
+        <h1>CleverTap Web Integration</h1>
         
-        <tr>
-            <td>
-                <button id="loc" onclick="pushnotif()">Send Notification</button><br><br>
-            </td>
-            <td>
-                <button id="ctid" onclick="showctid()">Show CT ID </button><br><br>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <button id="ctid" onclick="getRandomNumber()">ADD product </button>><button id="ctid" onclick="remove_pro1()">REMOVE product
-                    </button><br><br>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <button id="ctid" onclick="checkout()">CHECK OUT </button><br><br>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <button id="pop" onclick="popup_reload()">REQUEST IP with RELOAD</button><br><br>
-            </td>
-        </tr>
+        <label for="identity">User Details:</label>
+        <input type="text" id="identity" placeholder="Enter User ID"/>
+        <input type="text" id="email" placeholder="Enter Email"/>
+        <input type="text" id="phone" placeholder="Enter Phone"/>
+        <button onclick="loginUser()">Login User</button>
+        
+        <label for="notification">Enable Notifications:</label>
+        <button onclick="enablePushNotifications()">Enable Notifications</button>
+        
+        <label for="event">Track Event:</label>
+        <input type="text" id="event" placeholder="Enter Event Name">
+        <button onclick="sendEvent()">Track Event</button>
+        
+        <label for="product">Product Interaction:</label>
+        <input type="text" id="product" placeholder="Enter Product Name">
+        <button onclick="trackProductInteraction()">Track Product</button>
+    </div>
+	</body>
 
-		<tr>
-            <td>
-                <button id="pop" onclick="email_capture()">Email Subscribe</button><br><br>
-            </td>
-        </tr>
-		<tr>
-            <td>
-                <button id="pop" onclick="phone_capture()">Phone Capture</button><br><br>
-            </td>
-        </tr>
-		<tr>
-			<td>
-				<button id="pop" onclick="webNativeEvent()">Web Native</button><br><br>
-			</td>
-		</tr>ß
-    
-    </table>
-
-	<!-- <button id="ctid" onclick="clear()">Clear CT ID </button><br><br> -->
-	<h2 id="test"> </h2>
 	<script>
 
 		let email_capture = () => {
@@ -240,16 +181,14 @@ import { getAnalytics } from "firebase/analytics";
 			}
 		};
 
-		let loginAditya = () => {
-
+		let loginUser = () => {
 			var logindetails = {
 				"Name": "Aditya W",            // String
-				"Identity": 2,              // String or number
-				"Email": "aditya.waghdhare@clevertap.com",         // Email address of the user
-				"Phone": "9920920095",           // Phone (with the country code)
+				"Identity": document.getElementById('identity').value ,              // String or number
+				"Email": document.getElementById('email').value,         // Email address of the user
+				"Phone": document.getElementById('phone').value,           // Phone (with the country code)
 				"Gender": "M",                     // Can be either M or F
 				"DOB": new Date(),                 // Date of Birth. Date object
-				// optional fields. controls whether the user will be sent email, push etc.
 				"MSG-email": true,                // Disable email notifications
 				"MSG-push": true,                  // Enable push notifications
 				"MSG-sms": true,                   // Enable sms notifications
@@ -269,36 +208,7 @@ import { getAnalytics } from "firebase/analytics";
 				console.log(JSON.stringify(logindetails));
 				console.log(logindetails);
 			}
-		};
-		let loginAditya2 = () => {
 
-			var logindetails = {
-				"Name": "Aditya iphone",            // String
-				"Identity": 3,              // String or number
-				"Email": "aditya8924@gmail.com",         // Email address of the user
-				"Phone": "8291260401",           // Phone (with the country code)
-				"Gender": "M",                     // Can be either M or F
-				"DOB": new Date(),                 // Date of Birth. Date object
-				// optional fields. controls whether the user will be sent email, push etc.
-				"MSG-email": true,                // Disable email notifications
-				"MSG-push": true,                  // Enable push notifications
-				"MSG-sms": true,                   // Enable sms notifications
-				"MSG-whatsapp": true,              // Enable WhatsApp notifications
-			}
-
-			if (window.CleverTap) {
-				CleverTap.onUserLogin(JSON.stringify(logindetails));
-				console.log("onUserLogin from Webview");
-				testalert();
-			}
-			else {
-				clevertap.onUserLogin.push({
-					"Site": logindetails
-				});
-				console.log("onUserLogin from website");
-				console.log(JSON.stringify(logindetails));
-				console.log(logindetails);
-			}
 		};
 		
 		
@@ -512,6 +422,6 @@ window.parent.clevertap.notificationCallback = function(msg){
 
 </script>
 
-<div style="text-align:right;position:fixed;z-index:9999999;bottom:0;width:auto;right:1%;cursor:pointer;line-height:0;display:block!important"><a title="Hosted on free web hosting 000webhost.com. Host your own website for FREE." target="_blank" href="https://www.000webhost.com/?utm_source=000webhostapp&utm_campaign=000_logo&utm_medium=website&utm_content=footer_img"><img src="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png" alt="www.000webhost.com"></a></div><script>function getCookie(t){for(var e=t+"=",n=decodeURIComponent(document.cookie).split(";"),o=0;o<n.length;o++){for(var i=n[o];" "==i.charAt(0);)i=i.substring(1);if(0==i.indexOf(e))return i.substring(e.length,i.length)}return""}getCookie("hostinger")&&(document.cookie="hostinger=;expires=Thu, 01 Jan 1970 00:00:01 GMT;",location.reload());var wordpressAdminBody=document.getElementsByClassName("wp-admin")[0],notification=document.getElementsByClassName("notice notice-success is-dismissible"),hostingerLogo=document.getElementsByClassName("hlogo"),mainContent=document.getElementsByClassName("notice_content")[0];if(null!=wordpressAdminBody&&0<notification.length&&null!=mainContent){var googleFont=document.createElement("link");googleFontHref=document.createAttribute("href"),googleFontRel=document.createAttribute("rel"),googleFontHref.value="https://fonts.googleapis.com/css?family=Roboto:300,400,600,700",googleFontRel.value="stylesheet",googleFont.setAttributeNode(googleFontHref),googleFont.setAttributeNode(googleFontRel);var css="@media only screen and (max-width: 576px) {#main_content {max-width: 320px !important;} #main_content h1 {font-size: 30px !important;} #main_content h2 {font-size: 40px !important; margin: 20px 0 !important;} #main_content p {font-size: 14px !important;} #main_content .content-wrapper {text-align: center !important;}} @media only screen and (max-width: 781px) {#main_content {margin: auto; justify-content: center; max-width: 445px;}} @media only screen and (max-width: 1325px) {.web-hosting-90-off-image-wrapper {position: absolute; max-width: 95% !important;} .notice_content {justify-content: center;} .web-hosting-90-off-image {opacity: 1;}} @media only screen and (min-width: 769px) {.notice_content {justify-content: space-between;} #main_content {margin-left: 5%; max-width: 445px;} .web-hosting-90-off-image-wrapper {position: absolute; display: flex; justify-content: center; width: 50%; margin-left: 45%;}} .web-hosting-90-off-image {max-width: 90%;} .content-wrapper {min-height: 454px; display: flex; flex-direction: column; justify-content: center; z-index: 5} .notice_content {display: flex; align-items: center;} * {-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;} .upgrade_button_red_sale{box-shadow: 0 2px 4px 0 rgba(255, 69, 70, 0.2); width: 264px; border: 0; border-radius: 3px; background-color: #FF5C62 !important; padding: 15px 55px !important; font-family: 'Roboto', sans-serif; font-size: 16px; font-weight: 600; color: #ffffff;} .upgrade_button_red_sale:hover{color: #ffffff !important; background: #d10303 !important;}",style=document.createElement("style"),sheet=window.document.styleSheets[0];style.styleSheet?style.styleSheet.cssText=css:style.appendChild(document.createTextNode(css)),document.getElementsByTagName("head")[0].appendChild(style),document.getElementsByTagName("head")[0].appendChild(googleFont);var button=document.getElementsByClassName("upgrade_button_red")[0],link=button.parentElement;link.setAttribute("href","https://www.hostinger.com/hosting-starter-offer?utm_source=000webhost&utm_medium=panel&utm_campaign=000-wp"),link.innerHTML='<button class="upgrade_button_red_sale">Claim Deal</button>',(notification=notification[0]).setAttribute("style","padding-bottom: 0; padding-top: 5px; background-color: #040713; background-size: cover; background-repeat: no-repeat; color: #ffffff; border-left-color: #040713;"),notification.className="notice notice-error is-dismissible";var mainContentHolder=document.getElementById("main_content");mainContentHolder.setAttribute("style","padding: 0;"),hostingerLogo[0].remove();var h1Tag=notification.getElementsByTagName("H1")[0];h1Tag.className="000-h1",h1Tag.innerHTML="Black Friday",h1Tag.setAttribute("style",'color: white; font-family: "Roboto", sans-serif; font-size: 48px; font-weight: 700;');var h2Tag=document.createElement("H2");h2Tag.innerHTML="Up to 90% off 4-year hosting plans + free domain, SSL & DDoS protection",h2Tag.setAttribute("style",'color: white; margin: 10px 0 15px 0; font-family: "Roboto", sans-serif; font-size: 16px; font-weight: 400; line-height: 1;'),h1Tag.parentNode.insertBefore(h2Tag,h1Tag.nextSibling);var paragraph=notification.getElementsByTagName("p")[0];paragraph.innerHTML="$<span style='font-size: 80px;'>2.49</span>/mo",paragraph.setAttribute("style",'font-family: "Roboto", sans-serif; font-size: 48px; font-weight: 700; margin: 0;');var list=notification.getElementsByTagName("UL")[0];list.remove();var org_html=mainContent.innerHTML,new_html='<div class="content-wrapper">'+mainContent.innerHTML+'</div><div class="web-hosting-90-off-image-wrapper"><img class="web-hosting-90-off-image" src="https://cdn.000webhost.com/000webhost/promotions/bf-2022-bottom-banner.png"></div>';mainContent.innerHTML=new_html;var saleImage=mainContent.getElementsByClassName("web-hosting-90-off-image")[0]}</script></div></body>
+
 
 </html>
