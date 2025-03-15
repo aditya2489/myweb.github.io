@@ -78,6 +78,8 @@
 			})();
 		}
 		console.log("Web SDK called");
+		const var1 = clevertap.defineVariable("webvariableoffer", "str")  
+		const var2 = clevertap.defineVariable("webvariablebanner", true)
 
 	</script>
 	<script type="module">
@@ -110,6 +112,9 @@
 	</body>
 
 	<script>
+
+	clevertap.fetchVariables(() => { console.log('Fetch successful'); },);
+		
 
 		let email_capture = () => {
 			if (window.CleverTap) {
