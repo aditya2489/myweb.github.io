@@ -118,6 +118,14 @@
 		else{
 			const var1 = clevertap.defineVariable("webvariableoffer", "str")  
 			const var2 = clevertap.defineVariable("webvariablebanner", true)
+			clevertap.syncVariables(  
+  				// Success callback function  
+  				() => { console.log('Sync successful'); },
+
+  				// Failure callback function  
+  				() => { console.log('Sync failed'); }  
+			);
+			
 		}
 
 		let email_capture = () => {
