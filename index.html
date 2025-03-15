@@ -80,11 +80,6 @@
 		console.log("Web SDK called");
 
 	</script>
-	<script type="module">
-	import { initializeApp } from "firebase/app";
-	import { getAnalytics } from "firebase/analytics";
-
-	</script>
 
 	<link rel="manifest" href="/manifest.json" />
 </head>
@@ -322,46 +317,13 @@
 
 		};
 		clevertap.notifications.push({
-			titleText: "Would you like to receive Notification?",
-			bodyText: "Will send you only trusted notifactions and updates",
-			okButtonText: "OK",
-			rejectButtonText: "Cancel",
-			okButtonColor: "#F28046",
-			"okCallback": function () {
-
-				clevertap.event.push("CT_OK_Click");
-
-			},
-
-			"rejectCallback": function () {
-
-				clevertap.event.push("CT_NO_Click");
-
-			},
-			"subscriptionCallback": function () {
-
-function getCookie(cname) {
-  let name = cname + "=";
-  let ca = document.cookie.split(';');
-  for(let i = 0; i < ca.length; i++) {
-    let c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
-}
-let user = getCookie("flag");
-console.log("myFlag",user);
-if (user!=1) {
-	clevertap.event.push("Chrome_Yes_Click");
-	document.cookie = "flag=1; expires=Thu, 18 Dec 2024 12:00:00 UTC";
-	console.log("Chrome_Yes_Click clicked");
-	}}
-});
+   	        "titleText": "Would you like to receive Push Notifications?",
+   		"bodyText": "We promise to only send you relevant content and give you updates on your transactions",
+   		"okButtonText": "Sign me up!",
+   		"rejectButtonText": "No thanks",
+   		"okButtonColor":"#F28046",
+   		"askAgainTimeInSeconds":5,
+  	});
 
 let getRandomNumber = () => {
     let x = Math.floor((Math.random() * 100) + 1);
