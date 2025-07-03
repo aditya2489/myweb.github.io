@@ -64,7 +64,7 @@
 				privacy: [],
 			};
 			// replace with the CLEVERTAP_ACCOUNT_ID with the actual ACCOUNT ID value from your Dashboard -> Settings page
-			clevertap.account.push({ id: "ZWW-WWW-WW4Z" },"in1");
+			clevertap.account.push({ id: "TEST-5WK-87Z-666Z" });
 
 			clevertap.privacy.push({ optOut: false }); //set the flag to true, if the user of the device opts out of sharing their data
 
@@ -350,9 +350,9 @@ document.addEventListener("CT_web_native_display", function(event) {
   }
 });
 
-/*let customNotificationPayload = {
-    msgId: string // required
-    pivotId?: string // optional - String value containing an A/B testing campaign's variant name.
+let customNotificationPayload = {
+    msgId: string, // required
+    pivotId: string // optional - String value containing an A/B testing campaign's variant name.
  }
 
 window.parent.clevertap.notificationCallback = function(msg){
@@ -364,7 +364,7 @@ window.parent.clevertap.notificationCallback = function(msg){
       $button.click(function(){
          clevertap.renderNotificationClicked(customNotificationPayload);
      });
-};		*/
+};		
 
 </script>
 
